@@ -25,10 +25,11 @@ sudo apt install bluez bluez-tools alsa-utils bluez-alsa-utils -y
 
 3. Install librespot
 --------------------
-Download the latest release from GitHub (replace <URL> with the release link):
+This librespot build is for aarch64:
 
 ```bash
-wget <URL> -O librespot
+curl -L -o librespot.tar.gz https://github.com/TomasTNunes/librespot-bluetooh-guide/releases/latest/download/librespot_aarch64.tar.gz
+tar -xzvf librespot.tar.gz
 chmod +x librespot
 sudo mv librespot /usr/local/bin/
 ```
