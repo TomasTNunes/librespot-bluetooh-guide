@@ -33,6 +33,7 @@ curl -L -o librespot.tar.gz https://github.com/TomasTNunes/librespot-bluetooh-gu
 tar -xzvf librespot.tar.gz
 chmod +x librespot
 sudo mv librespot /usr/local/bin/
+sudo rm -rf librespot.tar.gz
 ```
 
 4. Disable PulseAudio & PipeWire
