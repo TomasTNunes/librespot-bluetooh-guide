@@ -20,7 +20,7 @@ printf 'Package: *\nPin: release n=bookworm\nPin-Priority: 100\n' | sudo tee --a
 ```bash
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install bluez bluez-tools alsa-utils bluez-alsa-utils libpulse0 libasound2 libgcc-s1 -y
+sudo apt install bluez bluez-tools alsa-utils bluez-alsa-utils libpulse0 libasound2 libgcc-s1 avahi-daemon -y
 ```
 
 3. Install librespot
@@ -56,7 +56,7 @@ sudo systemctl stop pipewire.socket pipewire.service pipewire-pulse.service
 sudo systemctl disable pipewire.socket pipewire.service pipewire-pulse.service
 ```
 
-5. Enable Bluetooth & BlueALSA
+5. Enable Bluetooth & BlueALSA & Avahi
 -------------------------------
 ```bash
 sudo systemctl enable bluealsa
@@ -64,6 +64,9 @@ sudo systemctl start bluealsa
 
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
+
+sudo systemctl enable avahi-daemon
+sudo systemctl start avahi-daemon
 ```
 
 6. Pair Bluetooth Speaker
