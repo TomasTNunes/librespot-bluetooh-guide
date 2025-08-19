@@ -20,7 +20,7 @@ printf 'Package: *\nPin: release n=bookworm\nPin-Priority: 100\n' | sudo tee --a
 ```bash
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install bluez bluez-tools alsa-utils bluez-alsa-utils -y
+sudo apt install bluez bluez-tools alsa-utils bluez-alsa-utils libpulse0 libasound2 libgcc-s1 -y
 ```
 
 3. Install librespot
@@ -28,7 +28,6 @@ sudo apt install bluez bluez-tools alsa-utils bluez-alsa-utils -y
 This librespot build is for aarch64:
 
 ```bash
-sudo apt install libpulse0 libasound2 libgcc-s1 -y
 curl -L -o librespot.tar.gz https://github.com/TomasTNunes/librespot-bluetooh-guide/releases/latest/download/librespot_aarch64.tar.gz
 tar -xzvf librespot.tar.gz
 chmod +x librespot
