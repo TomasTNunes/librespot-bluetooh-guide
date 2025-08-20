@@ -94,15 +94,34 @@ Play the ALSA test sound through your Bluetooth speaker
 ```bash
 sudo aplay -D bluealsa:DEV=XX:XX:XX:XX:XX:XX,PROFILE=a2dp /usr/share/sounds/alsa/Front_Center.wav
 ```
+8. Allow Connection through Firewall
+--------------
+If firewall is inactive skip this step.
 
-8. Run Librespot
+If firewall is active, choose a port between 1025-65535 (e.g. 35000) to connect to librespot player and make sure to allow connections through firewall:
+
+```bash
+sudo ufw allow 35000/tcp
+```
+9. Run Librespot
 ----------------
-Start Spotify Connect (replace with your device MAC address):
+Start Spotify Connect (replace with your device MAC address).
 
+If firewall inactive:
 ```bash
 sudo librespot \
   --name "MySpotifyDevice" \
   --backend alsa \
   --device "bluealsa:DEV=XX:XX:XX:XX:XX:XX,PROFILE=a2dp" \
   --initial-volume 70
+```
+
+If firewall active (replace port 35000 by port chosen above):
+```bash
+sudo librespot \
+  --name "MySpotifyDevice" \
+  --backend alsa \
+  --device "bluealsa:DEV=XX:XX:XX:XX:XX:XX,PROFILE=a2dp" \
+  --initial-volume 70 \
+  --zeroconf-port 35000 
 ```
