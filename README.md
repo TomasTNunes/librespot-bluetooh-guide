@@ -113,7 +113,8 @@ sudo librespot \
   --name "MySpotifyDevice" \
   --backend alsa \
   --device "bluealsa:DEV=XX:XX:XX:XX:XX:XX,PROFILE=a2dp" \
-  --initial-volume 70
+  --initial-volume 70 \
+  --autoplay on
 ```
 
 If firewall active (replace port 35000 by port chosen above):
@@ -123,5 +124,22 @@ sudo librespot \
   --backend alsa \
   --device "bluealsa:DEV=XX:XX:XX:XX:XX:XX,PROFILE=a2dp" \
   --initial-volume 70 \
+  --autoplay on \
   --zeroconf-port 35000 
+```
+
+Run with Additional Options:
+```bash
+sudo librespot \
+  --name "MySpotifyDevice" \
+  --backend alsa \
+  --device "bluealsa:DEV=XX:XX:XX:XX:XX:XX,PROFILE=a2dp" \
+  --initial-volume 70 \
+  --zeroconf-port 35000 \
+  --autoplay on \
+  -b 320 \
+  --cache <CACHE_DIR> \
+  --system-cache <CACHE_DIR> \
+  --cache-size-limit 8G
+
 ```
